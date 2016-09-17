@@ -1,0 +1,34 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Language" content="zh-CN" />
+	<title>test</title>
+  <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+  <link rel="stylesheet" rev="stylesheet" href="base.css" type="text/css" />
+<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+	<body ng-app="myApp" ng-cloak ng-controller="customersCtrl">
+  <div style="height:1000px; background:#ccc; font-size:14px; " >
+  <div class="textarea">{{textarea}}</div>
+  <input ng-keyup="keyup($event)" ng-blur="blur()" id="input" type="text" />
+    <button>弹窗</button>
+      今世的风景三幅老师家访了说了分手费撒旦解放了上了飞机酸辣粉蓝色杰弗里斯坚发牢骚，
+  </div>
+<script type="text/javascript"> 
+    var app = angular.module('myApp', []);
+    app.controller('customersCtrl', function($scope, $http) {
+    $scope.textarea="";
+    $scope.blur=function(){
+      $scope.textarea+="blur; "
+    }
+//localStorage.clear();
+    $scope.keyup=function(e){
+      $scope.textarea+=e.keyCode+"; "
+    }
+    
+    })
+</script> 
+</body>
+
+</html>
